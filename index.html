@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Teatr Wizja — Spektakle edukacyjne dla szkół i przedszkoli</title>
+<meta name="description" content="Teatr Wizja to coś więcej niż teatr — to edukacyjna podróż pełna emocji, muzyki i interaktywnej zabawy. Spektakle dla szkół i przedszkoli." />
+<meta name="theme-color" content="#0b0620" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Teatr Wizja — Spektakle dla szkół i przedszkoli" />
+<meta property="og:description" content="Edukacyjna podróż pełna emocji, muzyki i interaktywnej zabawy. Zaproś nas do swojej placówki." />
+<meta property="og:image" content="assets/show-cosmos.jpg" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon-180.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..900;1,6..12,300..900&family=Space+Grotesk:wght@400..700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============ KOSMICZNE TŁO (signature) ============ -->
+<div class="cosmos" aria-hidden="true">
+  <div class="cosmos__nebula cosmos__nebula--a"></div>
+  <div class="cosmos__nebula cosmos__nebula--b"></div>
+  <div class="cosmos__nebula cosmos__nebula--c"></div>
+  <canvas id="starfield" class="cosmos__stars"></canvas>
+  <div class="cosmos__grain"></div>
+</div>
+
+<!-- ============ NAWIGACJA ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="Teatr Wizja — strona główna">
+      <img class="brand__mark" src="assets/logo-white.png" alt="" width="56" height="56" />
+      <span class="brand__name">Teatr&nbsp;Wizja</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Nawigacja główna">
+      <a href="#spektakle">Spektakle</a>
+      <a href="#wartosci">Wartości</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#zespol">Zespół</a>
+      <a href="#opinie">Opinie</a>
+    </nav>
+
+    <a href="#kontakt" class="btn btn--gold nav__cta">Zaproś nas</a>
+
+    <button class="nav__burger" id="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- mobilne menu -->
+<div class="mobilemenu" id="mobileMenu" aria-hidden="true">
+  <nav class="mobilemenu__links" aria-label="Menu mobilne">
+    <a href="#spektakle">Spektakle</a>
+    <a href="#wartosci">Wartości</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#zespol">Zespół</a>
+    <a href="#opinie">Opinie</a>
+    <a href="#kontakt" class="btn btn--gold">Zaproś nas</a>
+  </nav>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__planet" aria-hidden="true" data-parallax="0.05"></div>
+    <div class="hero__moon" aria-hidden="true" data-parallax="0.1"></div>
+
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow eyebrow--rise"><span class="eyebrow__star">✦</span> Spektakle dla szkół i&nbsp;przedszkoli</p>
+        <h1 class="hero__title">
+          <span class="rise" style="--d:.05s">Edukacyjna</span>
+          <span class="rise hero__title-em" style="--d:.13s">podróż</span>
+          <span class="rise" style="--d:.21s">pełna magii.</span>
+        </h1>
+        <p class="hero__lead rise" style="--d:.34s">
+          Teatr&nbsp;Wizja to coś więcej niż teatr. To interaktywne przedstawienia pełne emocji,
+          muzyki i&nbsp;tańca, które rozbudzają ciekawość świata — i&nbsp;zostają w&nbsp;pamięci dzieci na&nbsp;długo.
+        </p>
+        <div class="hero__actions rise" style="--d:.46s">
+          <a href="#kontakt" class="btn btn--gold btn--lg">Zaproś nas do siebie</a>
+          <a href="#spektakle" class="btn btn--ghost btn--lg">
+            <svg viewBox="0 0 24 24" class="btn__icon" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            Zobacz spektakl
+          </a>
+        </div>
+        <div class="hero__trust rise" style="--d:.58s">
+          <div class="hero__rating" aria-label="Ocena 100 procent">
+            <span class="stars">★★★★★</span>
+          </div>
+          <p>100% rekomendacji&nbsp;· opinie nauczycieli i&nbsp;dyrektorów placówek</p>
+        </div>
+      </div>
+
+      <div class="hero__portal rise" style="--d:.3s">
+        <div class="portal">
+          <img src="assets/show-cosmos.jpg" alt="Aktorzy Teatru Wizja na kosmicznej scenie spektaklu Kosmiczna Podróż" />
+          <span class="portal__ring"></span>
+          <span class="portal__badge">
+            <strong>Kosmiczna Podróż</strong>
+            spektakl interaktywny
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <a href="#manifest" class="hero__scroll" aria-label="Przewiń w dół">
+      <span class="hero__scroll-dot"></span>
+      <span class="hero__scroll-label">scroll</span>
+    </a>
+  </section>
+
+  <!-- ============ MANIFEST ============ -->
+  <section class="manifest" id="manifest">
+    <div class="wrap">
+      <p class="manifest__eyebrow reveal">Nasza wizja</p>
+      <p class="manifest__text reveal">
+        Szukasz inspirującego sposobu na&nbsp;zainteresowanie dzieci światem wiedzy?
+        Tworzymy spektakle, które <em>uczą przez emocje</em> — łączą piękną muzykę, taniec i&nbsp;żywą
+        grę aktorską z&nbsp;wartościami, które warto przekazać najmłodszym.
+      </p>
+      <div class="manifest__divider reveal" aria-hidden="true">
+        <span></span><span class="manifest__star">✦</span><span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WARTOŚCI ============ -->
+  <section class="values" id="wartosci">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow__star">✦</span> Czego uczą nasze spektakle</p>
+        <h2 class="section-title">Mądrość ukryta w&nbsp;dobrej zabawie</h2>
+        <p class="section-sub">
+          Każde przedstawienie niesie ważny morał. Bawimy, wzruszamy i&nbsp;po cichu —
+          uczymy rzeczy naprawdę istotnych.
+        </p>
+      </header>
+
+      <div class="values__grid">
+        <article class="vcard reveal" style="--i:0">
+          <span class="vcard__icon vcard__icon--leaf">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21c0-9 6-15 15-15 0 9-6 15-15 15Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 17c2.5-3.5 5-5 9-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Troska o&nbsp;przyrodę</h3>
+          <p>Pokazujemy dzieciom, jak dbać o&nbsp;świat wokół nas — w&nbsp;sposób prosty i&nbsp;bliski ich codzienności.</p>
+        </article>
+
+        <article class="vcard reveal" style="--i:1">
+          <span class="vcard__icon vcard__icon--rose">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.3-7-9.2A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7-1.2C19 11.7 12 20 12 20Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Szacunek do&nbsp;zwierząt</h3>
+          <p>Empatia i&nbsp;wrażliwość wobec zwierząt to wartości, które przewijają się przez nasze historie.</p>
+        </article>
+
+        <article class="vcard reveal" style="--i:2">
+          <span class="vcard__icon vcard__icon--aqua">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 19c0-2.8 1.9-4.5 4-4.5S12 16.2 12 19M12 19c0-2.8 1.9-4.5 4-4.5s4 1.7 4 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Przyjaźń i&nbsp;współpraca</h3>
+          <p>Bohaterowie razem pokonują przeszkody — bo najwięcej da się osiągnąć wspólnie.</p>
+        </article>
+
+        <article class="vcard reveal" style="--i:3">
+          <span class="vcard__icon vcard__icon--gold">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V6l10-2v12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16.5" cy="16" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <h3>Muzyka, śpiew i&nbsp;taniec</h3>
+          <p>Piękne piosenki i&nbsp;efektowne choreografie — wysoki poziom artystyczny w&nbsp;każdej scenie.</p>
+        </article>
+
+        <article class="vcard reveal" style="--i:4">
+          <span class="vcard__icon vcard__icon--rose">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.5 5.2 5.7.8-4.1 4 1 5.6L12 21l-5.1 2.6 1-5.6-4.1-4 5.7-.8L12 3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Interaktywna zabawa</h3>
+          <p>Dzieci nie tylko oglądają — biorą udział w&nbsp;przedstawieniu i&nbsp;wchodzą na&nbsp;scenę.</p>
+        </article>
+
+        <article class="vcard reveal" style="--i:5">
+          <span class="vcard__icon vcard__icon--aqua">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3M9 18h6M10 18v2h4v-2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Wartości i&nbsp;morał</h3>
+          <p>Na zakończenie zawsze zostaje myśl, którą dzieci zabierają ze sobą do&nbsp;domu.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPEKTAKLE ============ -->
+  <section class="shows" id="spektakle">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow__star">✦</span> Repertuar</p>
+        <h2 class="section-title">Nasze spektakle</h2>
+        <p class="section-sub">Barwne musicale przygotowane z&nbsp;dbałością o&nbsp;walory edukacyjne i&nbsp;artystyczne.</p>
+      </header>
+
+      <!-- featured: Kosmiczna Podróż -->
+      <article class="show show--feature reveal">
+        <div class="show__media">
+          <div class="yt-facade" data-yt="AjSzBCvqdkU" data-poster="assets/show-cosmos.jpg" role="button" tabindex="0" aria-label="Odtwórz wideo: spektakl Kosmiczna Podróż">
+            <img src="assets/show-cosmos.jpg" alt="Scena ze spektaklu Kosmiczna Podróż" loading="lazy" />
+            <span class="yt-facade__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </span>
+            <span class="yt-facade__tag">Wideo · 1:08</span>
+          </div>
+        </div>
+        <div class="show__body">
+          <span class="show__tag show__tag--gold">Spektakl flagowy</span>
+          <h3 class="show__title">Kosmiczna Podróż</h3>
+          <p class="show__text">
+            Pełna rozmachu wyprawa między planety. Efektowne kostiumy, kosmiczne światła i&nbsp;wpadające w&nbsp;ucho
+            piosenki sprawiają, że dzieci są wniebowzięte — zwłaszcza gdy same wchodzą na&nbsp;scenę i&nbsp;robią
+            sobie zdjęcie z&nbsp;planetami.
+          </p>
+          <ul class="show__meta">
+            <li><span class="dot dot--rose"></span> dla przedszkoli i&nbsp;szkół podstawowych</li>
+            <li><span class="dot dot--aqua"></span> część interaktywna z&nbsp;dziećmi</li>
+            <li><span class="dot dot--gold"></span> muzyka · taniec · śpiew na&nbsp;żywo</li>
+          </ul>
+          <a href="#kontakt" class="btn btn--gold">Zarezerwuj termin</a>
+        </div>
+      </article>
+
+      <!-- second show: Czerwony Kapturek -->
+      <article class="show show--split reveal">
+        <div class="show__body">
+          <span class="show__tag show__tag--rose">Nowa interpretacja klasyki</span>
+          <h3 class="show__title">Czerwony Kapturek</h3>
+          <p class="show__text">
+            Świeże, zaskakujące spojrzenie na&nbsp;znaną wszystkim baśń. W&nbsp;przystępny sposób opowiada
+            o&nbsp;trosce o&nbsp;przyrodę, szacunku do&nbsp;zwierząt oraz sile przyjaźni i&nbsp;współpracy —
+            w&nbsp;radosnej, rodzinnej atmosferze.
+          </p>
+          <ul class="show__meta">
+            <li><span class="dot dot--rose"></span> mocny morał i&nbsp;walory edukacyjne</li>
+            <li><span class="dot dot--aqua"></span> serdeczne podejście do&nbsp;młodego widza</li>
+            <li><span class="dot dot--gold"></span> wysoki poziom aktorski i&nbsp;wokalny</li>
+          </ul>
+          <a href="#kontakt" class="btn btn--ghost">Zapytaj o&nbsp;spektakl</a>
+        </div>
+        <div class="show__media show__media--photo">
+          <img src="assets/stage-a.jpg" alt="Aktorzy Teatru Wizja na scenie" loading="lazy" />
+          <span class="portal__ring portal__ring--soft" aria-hidden="true"></span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PASEK INTERAKTYWNY (full-bleed) ============ -->
+  <section class="band" aria-label="Interaktywność">
+    <img class="band__bg" src="assets/stage-kids.jpg" alt="Dzieci wyciągają ręce do aktorów na scenie podczas spektaklu" />
+    <div class="band__overlay"></div>
+    <div class="wrap band__content reveal">
+      <p class="eyebrow eyebrow--center"><span class="eyebrow__star">✦</span> Magia dzieje się blisko widza</p>
+      <p class="band__quote">
+        Dzieci nie siedzą biernie w&nbsp;fotelach.<br />
+        <em>Wchodzą na&nbsp;scenę, śpiewają i&nbsp;stają się częścią opowieści.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ GALERIA ============ -->
+  <section class="gallery" id="galeria">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow__star">✦</span> Z naszych scen</p>
+        <h2 class="section-title">Galeria</h2>
+      </header>
+
+      <div class="gallery__grid">
+        <figure class="gtile gtile--wide reveal" style="--i:0">
+          <img src="assets/show-cosmos.jpg" alt="Czworo aktorów na kosmicznej scenie z rozłożonymi rękami" loading="lazy" />
+        </figure>
+        <figure class="gtile reveal" style="--i:1">
+          <img src="assets/stage-c.jpg" alt="Aktorzy w kosmicznych kostiumach pozują do zdjęcia" loading="lazy" />
+        </figure>
+        <figure class="gtile reveal" style="--i:2">
+          <img src="assets/stage-b.jpg" alt="Aktorzy za kulisami w świetle sceny" loading="lazy" />
+        </figure>
+        <figure class="gtile gtile--tall reveal" style="--i:3">
+          <img src="assets/stage-kids.jpg" alt="Dzieci na widowni wyciągają ręce do aktorów" loading="lazy" />
+        </figure>
+        <figure class="gtile reveal" style="--i:4">
+          <img src="assets/stage-a.jpg" alt="Aktorka w kostiumie astronautki na scenie" loading="lazy" />
+        </figure>
+      </div>
+
+      <p class="gallery__more reveal">
+        Więcej zdjęć i&nbsp;relacji znajdziesz na&nbsp;naszym
+        <a href="https://www.facebook.com/teatrwizja?locale=pl_PL" target="_blank" rel="noopener">Facebooku →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ ZESPÓŁ / ZAŁOŻYCIELKI ============ -->
+  <section class="team" id="zespol">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow__star">✦</span> Dziewczyny z&nbsp;wizją</p>
+        <h2 class="section-title">Z pasji do&nbsp;sztuki założyłyśmy teatr</h2>
+        <p class="section-sub">Trzy osobowości, jedna wspólna idea — tworzyć dla dzieci coś wyjątkowego.</p>
+      </header>
+
+      <div class="team__grid">
+        <article class="member reveal" style="--i:0">
+          <div class="member__photo">
+            <img src="assets/founder-anna.jpg" alt="Anna Frączyk, współzałożycielka Teatru Wizja" loading="lazy" />
+          </div>
+          <h3 class="member__name">Anna Frączyk</h3>
+          <p class="member__role">Współzałożycielka</p>
+          <p class="member__bio">
+            Absolwentka inżynierii chemicznej, której życie wypełnia sztuka i&nbsp;teatr. Jako mama dwóch
+            dziewczynek czerpie inspirację wprost z&nbsp;dziecięcego świata i&nbsp;przedstawień.
+          </p>
+        </article>
+
+        <article class="member reveal" style="--i:1">
+          <div class="member__photo">
+            <img src="assets/founder-monika.jpg" alt="Monika Wojtal, współzałożycielka Teatru Wizja" loading="lazy" />
+          </div>
+          <h3 class="member__name">Monika Wojtal</h3>
+          <p class="member__role">Współzałożycielka</p>
+          <p class="member__bio">
+            Magister zarządzania z&nbsp;wykształceniem pedagogicznym. Łączy wiedzę menedżerską z&nbsp;wrażliwością
+            społeczną. Prywatnie miłośniczka podróży, teatru i&nbsp;filharmonii.
+          </p>
+        </article>
+
+        <article class="member reveal" style="--i:2">
+          <div class="member__photo">
+            <img src="assets/founder-olga.jpg" alt="Olga Zaręba, współzałożycielka Teatru Wizja" loading="lazy" />
+          </div>
+          <h3 class="member__name">Olga Zaręba</h3>
+          <p class="member__role">Współzałożycielka</p>
+          <p class="member__bio">
+            Pedagog i&nbsp;trener wokalny, aktorka musicalowa i&nbsp;dubbingowa z&nbsp;rolami w&nbsp;wielu serialach
+            dziecięcych. Prywatnie miłośniczka podróży i&nbsp;zwierząt.
+          </p>
+        </article>
+      </div>
+
+      <!-- historia / wideo -->
+      <div class="story reveal">
+        <div class="story__copy">
+          <p class="eyebrow"><span class="eyebrow__star">✦</span> Nasza historia</p>
+          <h3 class="story__title">Jak powstał Teatr&nbsp;Wizja</h3>
+          <p class="story__text">
+            O początkach, marzeniach i&nbsp;kulisach tworzenia teatru — opowiadamy same.
+            Zobacz, skąd wzięła się nasza wizja.
+          </p>
+        </div>
+        <div class="story__media">
+          <div class="yt-facade" data-yt="nDij166-ql4" data-poster="https://i.ytimg.com/vi/nDij166-ql4/hqdefault.jpg" role="button" tabindex="0" aria-label="Odtwórz wideo: Jak powstał Teatr Wizja">
+            <img src="https://i.ytimg.com/vi/nDij166-ql4/hqdefault.jpg" alt="Założycielki Teatru Wizja podczas rozmowy" loading="lazy" />
+            <span class="yt-facade__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+            </span>
+            <span class="yt-facade__tag">Wideo · 11:29</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPINIE ============ -->
+  <section class="reviews" id="opinie">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow"><span class="eyebrow__star">✦</span> Opinie</p>
+        <h2 class="section-title">Co mówią o&nbsp;nas placówki</h2>
+        <div class="reviews__stat reveal">
+          <span class="reviews__score">100%</span>
+          <span class="reviews__label">poleceń&nbsp;· na podstawie opinii z&nbsp;Facebooka</span>
+          <span class="stars stars--lg">★★★★★</span>
+        </div>
+      </header>
+
+      <div class="reviews__grid">
+        <figure class="quote reveal" style="--i:0">
+          <span class="quote__mark" aria-hidden="true">“</span>
+          <blockquote>
+            Wspaniałe przedstawienie, które angażuje dzieci od&nbsp;początku do&nbsp;końca. Uczy troski o&nbsp;przyrodę,
+            szacunku do&nbsp;zwierząt i&nbsp;współpracy. Aktorzy imponują grą, śpiewem i&nbsp;tańcem. Z&nbsp;pełnym
+            przekonaniem — polecamy!
+          </blockquote>
+          <figcaption>
+            <span class="quote__author">Niepubliczne Przedszkole „Skrzat"</span>
+            <span class="quote__src">Facebook · spektakl „Czerwony Kapturek"</span>
+          </figcaption>
+        </figure>
+
+        <figure class="quote reveal" style="--i:1">
+          <span class="quote__mark" aria-hidden="true">“</span>
+          <blockquote>
+            Super spektakle. Piękne choreografie, ciekawe piosenki, dobra gra aktorska i&nbsp;kostiumy.
+            Dzieci były wniebowzięte, że mogą uczestniczyć w&nbsp;przedstawieniu i&nbsp;zrobić zdjęcie
+            z&nbsp;planetami. Zapamiętały je na&nbsp;długo!
+          </blockquote>
+          <figcaption>
+            <span class="quote__author">Klaudia Kurkowska</span>
+            <span class="quote__src">Facebook · spektakl „Kosmiczna Podróż"</span>
+          </figcaption>
+        </figure>
+
+        <figure class="quote reveal" style="--i:2">
+          <span class="quote__mark" aria-hidden="true">“</span>
+          <blockquote>
+            Byłam z&nbsp;klasą na&nbsp;dwóch spektaklach — oba świetne i&nbsp;wciągające. Dzieci zachwycone,
+            zwłaszcza tym, że mogły wejść na&nbsp;scenę. Cała klasa wyszła z&nbsp;uśmiechami. Bardzo polecamy!
+          </blockquote>
+          <figcaption>
+            <span class="quote__author">Emilia Zalewska</span>
+            <span class="quote__src">Facebook · wizyta z&nbsp;klasą</span>
+          </figcaption>
+        </figure>
+
+        <figure class="quote quote--mini reveal" style="--i:3">
+          <span class="quote__mark" aria-hidden="true">“</span>
+          <blockquote>
+            Polecam — piękne musicale, które dostarczają mnóstwo radości dzieciom i&nbsp;niosą piękne wartości.
+          </blockquote>
+          <figcaption>
+            <span class="quote__author">Dominik Kieś</span>
+            <span class="quote__src">Facebook</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTAKT / CTA ============ -->
+  <section class="contact" id="kontakt">
+    <div class="wrap contact__inner">
+      <div class="contact__copy reveal">
+        <p class="eyebrow"><span class="eyebrow__star">✦</span> Zapraszamy</p>
+        <h2 class="section-title">Zaproś Teatr&nbsp;Wizja do&nbsp;swojej placówki</h2>
+        <p class="section-sub">
+          Przyjeżdżamy do&nbsp;przedszkoli i&nbsp;szkół z&nbsp;pełną oprawą sceniczną. Napisz do&nbsp;nas —
+          dobierzemy spektakl i&nbsp;termin idealny dla Twojej grupy.
+        </p>
+
+        <ul class="contact__channels">
+          <li>
+            <a href="https://www.facebook.com/teatrwizja?locale=pl_PL" target="_blank" rel="noopener" class="channel">
+              <span class="channel__ico channel__ico--fb" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M14 9h3V5.5h-3c-2.2 0-3.5 1.4-3.5 3.6V11H8v3.5h2.5V22H14v-7.5h2.6L17 11h-3V9.4c0-.3.2-.4.5-.4Z" fill="currentColor"/></svg>
+              </span>
+              <span class="channel__txt"><strong>Facebook</strong>aktualności i&nbsp;opinie</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UC74Ybz_w5a9dRLqMDeKfbYA" target="_blank" rel="noopener" class="channel">
+              <span class="channel__ico channel__ico--yt" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M22 12s0-2.6-.3-3.8a2.3 2.3 0 0 0-1.6-1.6C18.5 6.3 12 6.3 12 6.3s-6.5 0-8.1.3A2.3 2.3 0 0 0 2.3 8.2 24 24 0 0 0 2 12c0 .9 0 2.6.3 3.8.2.9.8 1.4 1.6 1.6 1.6.3 8.1.3 8.1.3s6.5 0 8.1-.3a2.3 2.3 0 0 0 1.6-1.6C22 14.6 22 12.9 22 12Zm-12 2.5v-5l4.5 2.5-4.5 2.5Z" fill="currentColor"/></svg>
+              </span>
+              <span class="channel__txt"><strong>YouTube</strong>zobacz nas w&nbsp;akcji</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:kontakt@teatrwizja.pl" class="channel">
+              <span class="channel__ico channel__ico--mail" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              <span class="channel__txt"><strong>kontakt@teatrwizja.pl</strong>napisz do&nbsp;nas</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact__card reveal">
+        <form class="cform" id="contactForm" novalidate>
+          <div class="cform__row">
+            <label class="field">
+              <span>Imię i&nbsp;nazwisko</span>
+              <input type="text" name="name" autocomplete="name" required placeholder="np. Anna Kowalska" />
+            </label>
+            <label class="field">
+              <span>Placówka</span>
+              <input type="text" name="place" placeholder="Przedszkole / Szkoła" />
+            </label>
+          </div>
+          <div class="cform__row">
+            <label class="field">
+              <span>E-mail</span>
+              <input type="email" name="email" autocomplete="email" required placeholder="e-mail kontaktowy" />
+            </label>
+            <label class="field">
+              <span>Telefon</span>
+              <input type="tel" name="phone" placeholder="opcjonalnie" />
+            </label>
+          </div>
+          <label class="field">
+            <span>Wiadomość</span>
+            <textarea name="message" rows="4" placeholder="Wybrany spektakl, liczba dzieci, preferowany termin…"></textarea>
+          </label>
+          <button type="submit" class="btn btn--gold btn--block">Wyślij zapytanie</button>
+          <p class="cform__note" id="formNote" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ STOPKA ============ -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo-white.png" alt="Teatr Wizja" width="120" height="120" class="footer__logo" />
+      <p class="footer__tag">Edukacyjna podróż pełna emocji, muzyki i&nbsp;interaktywnej zabawy.</p>
+    </div>
+
+    <nav class="footer__nav" aria-label="Stopka">
+      <a href="#spektakle">Spektakle</a>
+      <a href="#wartosci">Wartości</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#zespol">Zespół</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="footer__social">
+      <a href="https://www.facebook.com/teatrwizja?locale=pl_PL" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M14 9h3V5.5h-3c-2.2 0-3.5 1.4-3.5 3.6V11H8v3.5h2.5V22H14v-7.5h2.6L17 11h-3V9.4c0-.3.2-.4.5-.4Z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.youtube.com/channel/UC74Ybz_w5a9dRLqMDeKfbYA" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M22 12s0-2.6-.3-3.8a2.3 2.3 0 0 0-1.6-1.6C18.5 6.3 12 6.3 12 6.3s-6.5 0-8.1.3A2.3 2.3 0 0 0 2.3 8.2 24 24 0 0 0 2 12c0 .9 0 2.6.3 3.8.2.9.8 1.4 1.6 1.6 1.6.3 8.1.3 8.1.3s6.5 0 8.1-.3a2.3 2.3 0 0 0 1.6-1.6C22 14.6 22 12.9 22 12Zm-12 2.5v-5l4.5 2.5-4.5 2.5Z" fill="currentColor"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>© <span id="year"></span> Teatr Wizja. Wszelkie prawa zastrzeżone.</p>
+    <p class="footer__credit">Spektakle dla szkół i&nbsp;przedszkoli</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
