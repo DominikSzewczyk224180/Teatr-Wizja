@@ -475,6 +475,7 @@ button{ font-family:inherit; cursor:pointer; }
 .gallery{ padding-block:var(--pad-section); }
 .gallery__grid{
   display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:200px; gap:1rem;
+  grid-auto-flow:dense;
 }
 .gtile{ position:relative; overflow:hidden; border-radius:var(--r); border:1px solid var(--line); }
 .gtile img{ width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease); }
@@ -594,9 +595,9 @@ button{ font-family:inherit; cursor:pointer; }
 .fbcard__embed{
   position:relative; border-radius:var(--r); overflow:hidden;
   background:#fff; min-height:300px;
-  display:flex; justify-content:center;
+  width:100%; max-width:500px; margin-inline:auto;
 }
-.fbcard__embed iframe{ width:100%; max-width:500px; display:block; }
+.fbcard__embed iframe{ width:100%; display:block; border:0; }
 .fbcard__fallback{ padding:1.4rem; color:#1b1145; text-align:center; }
 .fbcard__btn{ margin-top:.2rem; }
 
