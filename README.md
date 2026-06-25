@@ -1,7 +1,7 @@
-# Teatr Wizja — strona internetowa
+# Teatr Wizja – strona internetowa
 
-Statyczna strona (HTML + CSS + JS, bez frameworków i bez kroku budowania).
-Gotowa do wrzucenia na **GitHub Pages**.
+Statyczna strona (HTML, CSS, JS, bez frameworków i bez kroku budowania).
+Gotowa do wrzucenia na GitHub Pages.
 
 ## Jak opublikować na GitHub Pages
 
@@ -26,45 +26,66 @@ Gotowa do wrzucenia na **GitHub Pages**.
 
 > Ważne: `index.html` musi być w głównym katalogu repozytorium (nie w podfolderze).
 
-## Co warto uzupełnić / podmienić
+## Żywy panel Facebooka (w sekcji Kontakt)
 
-W pliku `index.html` znajdziesz miejsca przygotowane jako placeholdery:
+W sekcji *Kontakt* znajduje się osadzony, żywy podgląd profilu na Facebooku
+(oficjalna wtyczka **Facebook Page Plugin**). Pokazuje najnowsze posty wprost
+z Waszego profilu i aktualizuje się sam, bez żadnego backendu i bez własnego
+serwera. To najprostszy i najbezpieczniejszy sposób „integracji z Facebookiem"
+na stronie statycznej.
 
-- **Adres e-mail** `kontakt@teatrwizja.pl` — występuje w sekcji *Kontakt*
-  i w formularzu. Zamień na prawdziwy adres (wyszukaj w pliku `kontakt@teatrwizja.pl`,
-  pojawia się też w `script.js` przy wysyłce formularza).
-- **Telefon** — formularz ma pole na telefon; jeśli chcesz pokazać numer
-  kontaktowy na stronie, można go dodać w sekcji *Kontakt* obok e-maila.
-- **Linki** do Facebooka i YouTube są już wpięte (profil i kanał Teatru Wizja).
+Jak podmienić profil (gdyby kiedyś zmienił się adres):
+- otwórz `index.html` i znajdź fragment `plugins/page.php`,
+- w parametrze `href` wpisz adres swojego profilu (zakodowany), np.
+  `href=https%3A%2F%2Fwww.facebook.com%2Fteatrwizja`,
+- przycisk pod podglądem („Otwórz nasz profil na Facebooku") też kieruje na ten profil.
 
-## Formularz kontaktowy
+Gdyby u kogoś podgląd się nie wyświetlał:
+- profil na Facebooku musi być publiczny,
+- niektóre przeglądarki blokują treści z Facebooka przy bardzo restrykcyjnej
+  ochronie prywatności lub z blokerami; wtedy nadal działa przycisk linkujący
+  do profilu,
+- jeśli chcesz mieć pewność na własnej domenie, można (bezpłatnie, bez
+  programowania) założyć Facebook App ID i dodać swoją domenę w ustawieniach
+  aplikacji; Facebook czasem tego wymaga dla osadzonych wtyczek.
 
-Strona jest statyczna, więc formularz po wysłaniu otwiera program pocztowy
-użytkownika z gotową treścią (mechanizm `mailto:`). Jeśli w przyszłości
-będziesz chciała odbierać zgłoszenia bez poczty, można podpiąć darmową usługę
-typu Formspree / Getform (wystarczy zmienić obsługę formularza).
+Uwaga o opiniach przez API: pobieranie opinii/recenzji przez Facebook Graph API
+wymaga własnego serwera, tokenów dostępu i przejścia weryfikacji aplikacji w
+Meta. Na czystej stronie statycznej (GitHub Pages) nie da się tego zrobić
+w sposób bezpieczny i trwały. Dlatego opinie w sekcji *Opinie* są wpisane
+na stałe w `index.html` (można je swobodnie edytować), a żywy strumień postów
+zapewnia wtyczka Page Plugin opisana wyżej.
 
-## Opinie i posty z Facebooka
+## Co warto uzupełnić
 
-Opinie nauczycieli i placówek są **wpisane na stałe** w `index.html`
-(sekcja *Opinie*) — to najszybsze i najpewniejsze rozwiązanie dla strony statycznej.
-Gdybyś chciała wyświetlać **na żywo** posty/opinie z profilu FB, można dołożyć
-oficjalną wtyczkę *Facebook Page Plugin* (osadzany `<iframe>`), bez potrzeby
-pisania integracji z API.
+- Adres e-mail `kontakt@teatrwizja.pl` pojawia się w sekcji *Kontakt* jako jeden
+  z kanałów (kliknięcie otwiera program pocztowy). Zamień go na prawdziwy adres
+  (wyszukaj w `index.html` frazę `kontakt@teatrwizja.pl`).
+- Telefon: jeśli chcesz pokazać numer kontaktowy, można go dopisać obok e-maila
+  w liście kanałów w sekcji *Kontakt*.
+- Linki do Facebooka i YouTube są już wpięte (profil i kanał Teatru Wizja).
 
 ## Filmy
 
-Filmy z YouTube ładują się dopiero po kliknięciu (tzw. lazy-loading przez
+Filmy z YouTube ładują się dopiero po kliknięciu (lazy-loading przez
 `youtube-nocookie`), dzięki czemu strona otwiera się szybko.
+
+## Wydajność
+
+Strona została zoptymalizowana pod płynność: tło kosmiczne jest na jednej
+stałej warstwie, panele nie używają kosztownego rozmycia tła, animowane gwiazdy
+mają ograniczoną gęstość i zatrzymują się, gdy karta jest nieaktywna, a duże
+zdjęcia są skompresowane i ładują się leniwie. Osoby z włączoną opcją
+ograniczenia ruchu (`prefers-reduced-motion`) zobaczą wersję bez animacji.
 
 ---
 
 ### Pliki
 
 ```
-index.html      — struktura strony
-styles.css      — wygląd (motyw „kosmos”, paleta ze zdjęć ze spektakli)
-script.js       — animowane gwiazdy, parallaksa, menu, formularz, filmy
-assets/         — logo, zdjęcia założycielek, kadry ze spektakli, favicony
-.nojekyll       — informuje GitHub Pages, by nie przetwarzał plików przez Jekyll
+index.html      - struktura strony
+styles.css      - wygląd (motyw „kosmos", paleta ze zdjęć ze spektakli)
+script.js       - animowane gwiazdy, parallaksa, menu, filmy
+assets/         - logo, zdjęcia założycielek, kadry ze spektakli, favicony
+.nojekyll       - informuje GitHub Pages, by nie przetwarzał plików przez Jekyll
 ```

@@ -8,8 +8,8 @@
   --void:        #0b0620;
   --void-2:      #120a2e;
   --cosmos:      #1b1145;
-  --panel:       rgba(38, 23, 86, .50);
-  --panel-2:     rgba(28, 17, 64, .66);
+  --panel:       rgba(38, 23, 86, .82);
+  --panel-2:     rgba(22, 14, 52, .90);
   --nebula:      #8a4bff;
   --nebula-deep: #5a2bc4;
   --rose:        #ff5fa2;
@@ -45,8 +45,7 @@ html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
 body{
   font-family:var(--ff-body);
   color:var(--mist);
-  background:
-    radial-gradient(120% 90% at 50% -10%, #1a0f43 0%, var(--void-2) 42%, var(--void) 100%) fixed;
+  background:var(--void);
   line-height:1.65;
   overflow-x:hidden;
   font-size:clamp(1rem, .55rem + .55vw, 1.12rem);
@@ -69,12 +68,12 @@ button{ font-family:inherit; cursor:pointer; }
 /* =====================================================================
    KOSMICZNE TŁO — signature
    ===================================================================== */
-.cosmos{ position:fixed; inset:0; z-index:-2; overflow:hidden; pointer-events:none; }
+.cosmos{ position:fixed; inset:0; z-index:-2; overflow:hidden; pointer-events:none;
+  background:radial-gradient(120% 90% at 50% -10%, #1a0f43 0%, var(--void-2) 42%, var(--void) 100%); }
 .cosmos__stars{ position:absolute; inset:0; width:100%; height:100%; }
 .cosmos__nebula{
   position:absolute; border-radius:50%;
-  filter:blur(90px); opacity:.55; mix-blend-mode:screen;
-  will-change:transform;
+  filter:blur(64px); opacity:.55; mix-blend-mode:screen;
 }
 .cosmos__nebula--a{
   width:60vw; height:60vw; top:-12vw; left:-8vw;
@@ -171,7 +170,7 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .nav.is-scrolled{
   background:rgba(11,6,32,.72);
-  backdrop-filter:blur(16px) saturate(1.2);
+  backdrop-filter:blur(10px) saturate(1.2);
   border-bottom-color:var(--line);
 }
 .nav__inner{
@@ -215,7 +214,7 @@ button{ font-family:inherit; cursor:pointer; }
 /* mobilne menu */
 .mobilemenu{
   position:fixed; inset:0; z-index:55;
-  background:rgba(9,5,26,.96); backdrop-filter:blur(10px);
+  background:rgba(9,5,26,.97);
   display:grid; place-items:center;
   opacity:0; visibility:hidden; transition:opacity .35s var(--ease), visibility .35s;
 }
@@ -298,7 +297,7 @@ button{ font-family:inherit; cursor:pointer; }
 .portal__badge{
   position:absolute; bottom:4%; left:50%; transform:translateX(-50%);
   display:flex; flex-direction:column; align-items:center;
-  background:rgba(11,6,32,.82); backdrop-filter:blur(8px);
+  background:rgba(11,6,32,.9);
   border:1px solid var(--line-bright); border-radius:100px;
   padding:.5rem 1.1rem; text-align:center; white-space:nowrap;
   font-size:.72rem; color:var(--mist-faint);
@@ -358,7 +357,6 @@ button{ font-family:inherit; cursor:pointer; }
   background:linear-gradient(160deg, var(--panel), var(--panel-2));
   border:1px solid var(--line); border-radius:var(--r-lg);
   padding:2rem 1.9rem;
-  backdrop-filter:blur(10px);
   transition:transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
 }
 .vcard:hover{
@@ -385,7 +383,7 @@ button{ font-family:inherit; cursor:pointer; }
 .show{
   background:linear-gradient(160deg, var(--panel), var(--panel-2));
   border:1px solid var(--line); border-radius:var(--r-xl);
-  overflow:hidden; backdrop-filter:blur(10px);
+  overflow:hidden;
 }
 .show + .show{ margin-top:2rem; }
 .show--feature{
@@ -523,7 +521,7 @@ button{ font-family:inherit; cursor:pointer; }
   margin-top:clamp(2.5rem,5vw,4rem);
   background:linear-gradient(160deg, var(--panel), var(--panel-2));
   border:1px solid var(--line); border-radius:var(--r-xl);
-  overflow:hidden; backdrop-filter:blur(10px);
+  overflow:hidden;
   display:grid; grid-template-columns:.85fr 1.15fr; align-items:center;
 }
 .story__copy{ padding:clamp(1.8rem,3.5vw,3rem); }
@@ -550,7 +548,6 @@ button{ font-family:inherit; cursor:pointer; }
   background:linear-gradient(160deg, var(--panel), var(--panel-2));
   border:1px solid var(--line); border-radius:var(--r-lg);
   padding:2.2rem 2rem 1.8rem;
-  backdrop-filter:blur(10px);
   transition:transform .4s var(--ease), border-color .4s var(--ease);
 }
 .quote:hover{ transform:translateY(-5px); border-color:var(--line-bright); }
@@ -583,25 +580,25 @@ button{ font-family:inherit; cursor:pointer; }
 .channel__txt{ display:flex; flex-direction:column; line-height:1.3; font-size:.92rem; color:var(--mist-faint); }
 .channel__txt strong{ color:var(--mist); font-size:1.02rem; }
 
-.contact__card{
+.contact__fb{ align-self:stretch; }
+.fbcard{
   background:linear-gradient(160deg, var(--panel), var(--panel-2));
   border:1px solid var(--line); border-radius:var(--r-xl);
-  padding:clamp(1.6rem,3vw,2.4rem); backdrop-filter:blur(10px);
+  padding:clamp(1.3rem,2.6vw,1.8rem);
+  display:flex; flex-direction:column; gap:1.2rem;
 }
-.cform{ display:flex; flex-direction:column; gap:1rem; }
-.cform__row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-.field{ display:flex; flex-direction:column; gap:.45rem; }
-.field span{ font-family:var(--ff-util); font-size:.72rem; text-transform:uppercase; letter-spacing:.14em; color:var(--mist-faint); }
-.field input,.field textarea{
-  font-family:var(--ff-body); font-size:1rem; color:var(--mist);
-  background:rgba(11,6,32,.5); border:1px solid var(--line); border-radius:12px;
-  padding:.8rem .95rem; transition:border-color .25s var(--ease), background .25s var(--ease);
-  resize:vertical;
+.fbcard__head{ display:flex; align-items:center; gap:.9rem; }
+.fbcard__title{ display:flex; flex-direction:column; line-height:1.3; }
+.fbcard__title strong{ font-family:var(--ff-display); font-weight:600; font-size:1.2rem; color:var(--mist); }
+.fbcard__title span{ font-size:.88rem; color:var(--mist-faint); margin-top:.15rem; }
+.fbcard__embed{
+  position:relative; border-radius:var(--r); overflow:hidden;
+  background:#fff; min-height:300px;
+  display:flex; justify-content:center;
 }
-.field input::placeholder,.field textarea::placeholder{ color:rgba(243,238,255,.35); }
-.field input:focus,.field textarea:focus{ outline:none; border-color:var(--gold); background:rgba(11,6,32,.7); }
-.cform__note{ font-size:.9rem; color:var(--aqua); min-height:1.2rem; text-align:center; }
-.cform__note.is-error{ color:var(--rose); }
+.fbcard__embed iframe{ width:100%; max-width:500px; display:block; }
+.fbcard__fallback{ padding:1.4rem; color:#1b1145; text-align:center; }
+.fbcard__btn{ margin-top:.2rem; }
 
 /* =====================================================================
    STOPKA
@@ -664,7 +661,6 @@ button{ font-family:inherit; cursor:pointer; }
   .nav__burger{ display:flex; }
   .values__grid,.team__grid,.reviews__grid{ grid-template-columns:1fr; }
   .quote--mini{ grid-column:auto; }
-  .cform__row{ grid-template-columns:1fr; }
   .gallery__grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:160px; }
   .gtile--wide{ grid-column:span 2; }
   .footer__inner{ grid-template-columns:1fr; }

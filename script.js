@@ -85,7 +85,7 @@
             const f = parseFloat(el.getAttribute("data-parallax")) || 0;
             el._mx = (-cx * f * 240).toFixed(1);
           });
-          requestAnimationFrame(update);
+          if (!ticking) { requestAnimationFrame(update); ticking = true; }
         });
       }
     }
@@ -111,46 +111,13 @@
     });
   });
 
-  /* ---------- formularz kontaktowy ---------- */
-  const form = $("#contactForm");
-  const note = $("#formNote");
-  if (form && note) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-      const name = (data.name || "").trim();
-      const email = (data.email || "").trim();
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-      if (!name || !emailOk) {
-        note.textContent = "Uzupełnij imię i poprawny adres e-mail.";
-        note.classList.add("is-error");
-        return;
-      }
-      note.classList.remove("is-error");
-
-      // strona statyczna — przygotowujemy wiadomość e-mail
-      const subject = encodeURIComponent("Zapytanie o spektakl — " + (data.place || name));
-      const body = encodeURIComponent(
-        `Imię i nazwisko: ${name}\n` +
-        `Placówka: ${data.place || "-"}\n` +
-        `E-mail: ${email}\n` +
-        `Telefon: ${data.phone || "-"}\n\n` +
-        `Wiadomość:\n${data.message || "-"}`
-      );
-      note.textContent = "Dziękujemy! Otwieramy Twój program pocztowy… Jeśli się nie pojawi, napisz do nas na Facebooku.";
-      window.location.href = `mailto:kontakt@teatrwizja.pl?subject=${subject}&body=${body}`;
-      form.reset();
-    });
-  }
-
   /* =====================================================================
      STARFIELD — animowane niebo (signature)
      ===================================================================== */
   const canvas = $("#starfield");
   if (canvas && canvas.getContext) {
     const ctx = canvas.getContext("2d");
-    let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     let stars = [];
     let shooting = null;
     let nextShoot = 0;
@@ -160,7 +127,7 @@
     const resize = () => {
       w = window.innerWidth;
       h = window.innerHeight;
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       canvas.style.width = w + "px";
@@ -170,7 +137,7 @@
     };
 
     const buildStars = () => {
-      const count = Math.round((w * h) / 9000); // gęstość zależna od ekranu
+      const count = Math.round((w * h) / 11000); // gęstość zależna od ekranu
       stars = [];
       for (let i = 0; i < count; i++) {
         stars.push({
@@ -215,10 +182,10 @@
         ctx.fill();
 
         // delikatna poświata dla większych gwiazd
-        if (s.r > 1.2) {
-          ctx.globalAlpha = s.a * tw * 0.18;
+        if (s.r > 1.35) {
+          ctx.globalAlpha = s.a * tw * 0.14;
           ctx.beginPath();
-          ctx.arc(s.x, yy, s.r * 3.2, 0, Math.PI * 2);
+          ctx.arc(s.x, yy, s.r * 2.6, 0, Math.PI * 2);
           ctx.fill();
         }
       }
