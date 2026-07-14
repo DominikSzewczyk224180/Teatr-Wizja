@@ -546,11 +546,13 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .quote{
   position:relative;
+  display:flex; flex-direction:column;
   background:linear-gradient(160deg, var(--panel), var(--panel-2));
   border:1px solid var(--line); border-radius:var(--r-lg);
   padding:2.2rem 2rem 1.8rem;
   transition:transform .4s var(--ease), border-color .4s var(--ease);
 }
+.quote figcaption{ margin-top:auto; }
 .quote:hover{ transform:translateY(-5px); border-color:var(--line-bright); }
 .quote__mark{
   font-family:var(--ff-display); font-size:4.5rem; line-height:.6; color:var(--gold);
@@ -559,8 +561,7 @@ button{ font-family:inherit; cursor:pointer; }
 .quote blockquote{ font-size:1.05rem; color:var(--mist); margin:.4rem 0 1.3rem; }
 .quote__author{ display:block; font-family:var(--ff-display); font-weight:600; font-size:1.1rem; }
 .quote__src{ display:block; font-family:var(--ff-util); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--mist-faint); margin-top:.2rem; }
-.quote--mini{ grid-column:span 2; }
-.quote--mini blockquote{ font-family:var(--ff-display); font-style:italic; font-size:1.4rem; }
+.quote--mini blockquote{ font-family:var(--ff-display); font-style:italic; font-size:1.15rem; }
 
 /* =====================================================================
    KONTAKT
@@ -661,7 +662,6 @@ button{ font-family:inherit; cursor:pointer; }
   .nav__links,.nav__cta{ display:none; }
   .nav__burger{ display:flex; }
   .values__grid,.team__grid,.reviews__grid{ grid-template-columns:1fr; }
-  .quote--mini{ grid-column:auto; }
   .gallery__grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:160px; }
   .gtile--wide{ grid-column:span 2; }
   .footer__inner{ grid-template-columns:1fr; }
