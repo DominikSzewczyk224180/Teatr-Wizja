@@ -67,20 +67,16 @@ Karty leżą naprzemiennie (plakat raz z lewej, raz z prawej) i są podzielone n
   przycisk „Pobierz plakat" go pobiera),
 - terminy spektakli są wpisane w `index.html` w listach `pcard__meta` (łatwo zmienić).
 
-### Plakat „Małej Ani"
-
-Karta „Mała Ania z Zielonego Wzgórza" ma na razie zastępczy kafelek
-(„Plakat wkrótce"), ponieważ plik PDF tego plakatu nie dotarł. Aby go dodać:
-1. wrzuć podgląd do `assets/poster-ania.jpg` oraz PDF do `assets/plakat-ania.pdf`,
-2. w `index.html` w karcie `pcard--ania` zamień blok `pcard__soon` na `pcard__poster`
-   z linkiem i obrazem (jak w pozostałych kartach),
-3. w `pcard__actions` wstaw przycisk „Pobierz plakat (PDF)" zamiast notatki.
+Wszystkie cztery spektakle mają już komplet: podgląd plakatu (`poster-*.jpg`)
+oraz plik PDF do pobrania (`plakat-*.pdf`).
 
 ## Logo w sekcji hero
 
-Duże logo po prawej w hero to `assets/logo-white.png` (biały wordmark na
-przezroczystym tle). Gdy pojawi się wersja w lepszej jakości, wystarczy podmienić
-ten jeden plik (najlepiej biały, przezroczyste tło, kwadratowy, np. 800x800 lub większy).
+Duże logo po prawej w hero to `assets/logo-hero.png`. Jest to `logo-white.png`
+przycięty do samej treści (usunięte puste marginesy), dzięki czemu wygląda większy.
+Gdy pojawi się wersja w lepszej jakości, podmień `logo-hero.png` (najlepiej biały
+wordmark na przezroczystym tle, przycięty do treści). W nawigacji i stopce dalej
+działa `logo-white.png`.
 
 ## Kontakt
 

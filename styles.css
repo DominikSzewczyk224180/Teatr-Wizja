@@ -295,7 +295,7 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .portal__ring--soft{ opacity:.45; }
 .portal--logo .portal__logo{
-  object-fit:contain; padding:15%;
+  object-fit:contain; padding:9%;
   background:radial-gradient(circle at 50% 42%, #1b1148 0%, #0c0724 72%);
   box-shadow:0 30px 80px -30px rgba(0,0,0,.85), inset 0 0 60px rgba(0,0,0,.5);
 }
@@ -434,45 +434,6 @@ button{ font-family:inherit; cursor:pointer; }
   transition:transform .5s var(--ease), box-shadow .5s var(--ease);
 }
 .pcard__poster a:hover img{ transform:translateY(-4px) scale(1.01); box-shadow:0 34px 72px -24px rgba(0,0,0,.82); }
-
-/* kafelek-plakat tymczasowy (Mała Ania) w estetyce oryginalnego plakatu */
-.aniaposter{
-  aspect-ratio:860/1216; border-radius:var(--r-lg); overflow:hidden;
-  position:relative; display:flex; flex-direction:column; justify-content:center;
-  align-items:center; text-align:center; padding:14% 11%;
-  background:linear-gradient(165deg, #f5f2ea 0%, #e9efe1 55%, #dfe8d6 100%);
-  box-shadow:0 24px 60px -22px rgba(0,0,0,.6);
-  border:1px solid rgba(120,150,110,.4);
-}
-.aniaposter::before{
-  content:""; position:absolute; inset:5.5%; border:1.5px solid rgba(93,140,95,.5);
-  border-radius:2px; pointer-events:none;
-}
-.aniaposter__inner{ position:relative; }
-.aniaposter__title{
-  font-family:var(--ff-display); color:#3c5a44; font-weight:600; line-height:1.16;
-  font-size:clamp(1.05rem,2.5vw,1.7rem);
-}
-.aniaposter__rule{
-  display:block; height:2px; width:64%; margin:.9rem auto;
-  background:linear-gradient(90deg, transparent, #c9a84c, transparent);
-}
-.aniaposter__tag{
-  font-family:var(--ff-display); font-style:italic; color:#5d7d5f;
-  font-size:clamp(.9rem,1.8vw,1.15rem);
-}
-.aniaposter__musical{
-  margin-top:1.5rem; font-family:var(--ff-display); font-weight:700; color:#3c5a44;
-  font-size:clamp(1rem,2.1vw,1.4rem); display:flex; flex-direction:column;
-}
-.aniaposter__musical span{
-  font-family:var(--ff-util); font-weight:400; font-size:.68rem; letter-spacing:.14em;
-  text-transform:uppercase; color:#5d7d5f; margin-top:.25rem;
-}
-.aniaposter__sprig{ position:absolute; left:50%; transform:translateX(-50%); width:34%; color:#6fa06a; }
-.aniaposter__sprig svg{ width:100%; height:auto; display:block; }
-.aniaposter__sprig--top{ top:8%; }
-.aniaposter__sprig--bottom{ bottom:8%; transform:translateX(-50%) rotate(180deg); }
 
 /* treść karty */
 .pcard__tag{
