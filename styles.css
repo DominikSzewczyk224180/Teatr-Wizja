@@ -175,15 +175,11 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .nav__inner{
   max-width:1280px; margin-inline:auto;
-  padding:.85rem clamp(1.1rem,4vw,2.4rem);
+  padding:.7rem clamp(1.1rem,4vw,2.4rem);
   display:flex; align-items:center; gap:1.5rem;
 }
-.brand{ display:inline-flex; align-items:center; gap:.65rem; }
-.brand__mark{ width:46px; height:46px; }
-.brand__name{
-  font-family:var(--ff-display); font-weight:600; font-size:1.25rem;
-  letter-spacing:.01em;
-}
+.brand{ display:inline-flex; align-items:center; }
+.brand__mark{ height:54px; width:auto; display:block; }
 .nav__links{ display:flex; gap:1.8rem; margin-left:auto; }
 .nav__links a{
   font-weight:600; font-size:.97rem; color:var(--mist-dim);
@@ -251,7 +247,7 @@ button{ font-family:inherit; cursor:pointer; }
   position:relative; z-index:2; width:100%;
   max-width:var(--wrap); margin-inline:auto;
   padding-inline:clamp(1.2rem,4vw,2.4rem);
-  display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(2rem,5vw,4.5rem);
+  display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,4.5rem);
   align-items:center;
 }
 .hero__title{
@@ -279,39 +275,29 @@ button{ font-family:inherit; cursor:pointer; }
 
 /* portal — okrągłe „okno" na kosmos */
 .hero__portal{ display:flex; justify-content:center; }
-.portal{ position:relative; width:min(38vw,420px); aspect-ratio:1; }
-.portal > img{
-  position:absolute; inset:6%; width:88%; height:88%;
-  object-fit:cover; border-radius:50%;
-  box-shadow:0 30px 80px -30px rgba(0,0,0,.8), inset 0 0 40px rgba(0,0,0,.4);
+.brandmark{
+  position:relative; display:grid; place-items:center;
+  width:100%; max-width:520px; margin-inline:auto; padding:9% 0;
 }
-.portal__ring{
-  position:absolute; inset:0; border-radius:50%; padding:3px;
-  background:conic-gradient(from 0deg, var(--gold), var(--rose), var(--aqua), var(--nebula), var(--gold));
-  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor; mask-composite:exclude;
-  animation:spin 18s linear infinite;
-  opacity:.9;
+.brandmark__glow{
+  position:absolute; inset:-20% -14%; z-index:0;
+  background:
+    radial-gradient(ellipse 50% 42% at 40% 36%, rgba(138,75,255,.42), transparent 68%),
+    radial-gradient(ellipse 48% 40% at 64% 68%, rgba(255,95,162,.30), transparent 70%),
+    radial-gradient(ellipse 60% 30% at 50% 50%, rgba(87,214,240,.12), transparent 72%);
+  filter:blur(52px);
 }
-.portal__ring--soft{ opacity:.45; }
-.portal--logo .portal__logo{
-  object-fit:contain; padding:9%;
-  background:radial-gradient(circle at 50% 42%, #1b1148 0%, #0c0724 72%);
-  box-shadow:0 30px 80px -30px rgba(0,0,0,.85), inset 0 0 60px rgba(0,0,0,.5);
+.brandmark__logo{
+  position:relative; z-index:1; width:100%; height:auto; display:block;
+  filter:drop-shadow(0 14px 42px rgba(0,0,0,.5));
 }
-.portal__badge{
-  position:absolute; bottom:4%; left:50%; transform:translateX(-50%);
-  display:flex; flex-direction:column; align-items:center;
-  background:rgba(11,6,32,.9);
-  border:1px solid var(--line-bright); border-radius:100px;
-  padding:.5rem 1.1rem; text-align:center; white-space:nowrap;
-  font-size:.72rem; color:var(--mist-faint);
-  font-family:var(--ff-util); letter-spacing:.12em; text-transform:uppercase;
+.brandmark__spark{
+  position:absolute; z-index:2; font-size:1.1rem; line-height:1;
+  animation:twinkle 3.4s ease-in-out infinite;
 }
-.portal__badge strong{
-  display:block; font-family:var(--ff-display); font-size:1rem;
-  text-transform:none; letter-spacing:0; color:var(--gold); font-weight:600;
-}
+.brandmark__spark--a{ top:6%; right:9%; color:var(--gold); }
+.brandmark__spark--b{ bottom:9%; left:7%; color:var(--aqua); font-size:.85rem; animation-delay:1.5s; }
+@keyframes twinkle{ 0%,100%{ opacity:.3; transform:scale(.85); } 50%{ opacity:1; transform:scale(1.1); } }
 
 .hero__scroll{
   position:absolute; bottom:1.8rem; left:50%; transform:translateX(-50%);
@@ -678,7 +664,7 @@ button{ font-family:inherit; cursor:pointer; }
    ===================================================================== */
 .footer{ border-top:1px solid var(--line); padding-top:clamp(3rem,6vw,4.5rem); margin-top:2rem; }
 .footer__inner{ display:grid; grid-template-columns:1.4fr 1fr auto; gap:2rem; align-items:start; padding-bottom:2.5rem; }
-.footer__logo{ width:96px; height:96px; margin-bottom:1rem; }
+.footer__logo{ height:60px; width:auto; margin-bottom:1rem; }
 .footer__tag{ color:var(--mist-faint); max-width:24rem; font-size:.95rem; }
 .footer__nav{ display:flex; flex-direction:column; gap:.7rem; }
 .footer__nav a{ color:var(--mist-dim); font-size:.95rem; transition:color .25s var(--ease); }
@@ -720,7 +706,7 @@ button{ font-family:inherit; cursor:pointer; }
 @media (max-width:1000px){
   .hero__inner{ grid-template-columns:1fr; }
   .hero__portal{ order:-1; }
-  .portal{ width:min(64vw,300px); }
+  .brandmark{ width:min(64vw,300px); }
   .story,.contact__inner{ grid-template-columns:1fr; }
   .values__grid,.team__grid{ grid-template-columns:repeat(2,1fr); }
   .footer__inner{ grid-template-columns:1fr 1fr; }
@@ -748,6 +734,5 @@ button{ font-family:inherit; cursor:pointer; }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
   .rise,.eyebrow--rise,.reveal{ opacity:1 !important; transform:none !important; }
-  .portal__ring{ animation:none; }
   .hero__scroll-dot::after{ animation:none; }
 }

@@ -70,13 +70,15 @@ Karty leżą naprzemiennie (plakat raz z lewej, raz z prawej) i są podzielone n
 Wszystkie cztery spektakle mają już komplet: podgląd plakatu (`poster-*.jpg`)
 oraz plik PDF do pobrania (`plakat-*.pdf`).
 
-## Logo w sekcji hero
+## Logo (`assets/logo-hero.png`)
 
-Duże logo po prawej w hero to `assets/logo-hero.png`. Jest to `logo-white.png`
-przycięty do samej treści (usunięte puste marginesy), dzięki czemu wygląda większy.
-Gdy pojawi się wersja w lepszej jakości, podmień `logo-hero.png` (najlepiej biały
-wordmark na przezroczystym tle, przycięty do treści). W nawigacji i stopce dalej
-działa `logo-white.png`.
+Logo pochodzi z wektorowego pliku plakatu i jest wycięte do samej treści oraz
+podane w bieli na przezroczystym tle, dzięki czemu jest ostre i wyraźne.
+Ten sam plik działa w trzech miejscach: w hero (duże, na miękkiej kosmicznej
+poświacie, bez ramki), w pasku menu na górze oraz w stopce. Gdy pojawi się nowa
+wersja, wystarczy podmienić `logo-hero.png` (biały wordmark, przezroczyste tło,
+przycięty do treści). Rozmiary ustawia się w `styles.css`: hero `.brandmark`,
+menu `.brand__mark`, stopka `.footer__logo`.
 
 ## Kontakt
 
