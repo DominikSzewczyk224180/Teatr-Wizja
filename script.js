@@ -95,7 +95,7 @@
   $$(".yt-facade").forEach((facade) => {
     const play = () => {
       const id = facade.getAttribute("data-yt");
-      if (!id) return;
+      if (!id || facade.querySelector("iframe")) return;
       const iframe = document.createElement("iframe");
       iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
       iframe.title = "Odtwarzacz wideo Teatr Wizja";
@@ -103,6 +103,7 @@
       iframe.allowFullscreen = true;
       facade.innerHTML = "";
       facade.appendChild(iframe);
+      facade.classList.add("is-playing");
       facade.style.cursor = "default";
     };
     facade.addEventListener("click", play);

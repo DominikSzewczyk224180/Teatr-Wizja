@@ -112,3 +112,10 @@ assets/         - logo, zdjęcia założycielek, kadry ze spektakli, plakaty
                   (poster-*.jpg podglądy, plakat-*.pdf do pobrania), favicony
 .nojekyll       - informuje GitHub Pages, by nie przetwarzał plików przez Jekyll
 ```
+
+## Cache i aktualizacje (ważne)
+
+Pliki `styles.css`, `script.js` i logo są podpięte z końcówką `?v=7`. To wymusza
+w przeglądarce pobranie świeżej wersji po każdej aktualizacji. Jeśli zmienisz te
+pliki, podbij numer (np. `?v=8`) w `index.html`, a każdy zobaczy nową wersję bez
+czyszczenia cache. Podczas testów najpewniej działa okno prywatne (Ctrl+Shift+N).
