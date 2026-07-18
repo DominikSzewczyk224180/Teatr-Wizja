@@ -115,7 +115,33 @@ assets/         - logo, zdjęcia założycielek, kadry ze spektakli, plakaty
 
 ## Cache i aktualizacje (ważne)
 
-Pliki `styles.css`, `script.js` i logo są podpięte z końcówką `?v=9`. To wymusza
+Pliki `styles.css`, `script.js` i logo są podpięte z końcówką `?v=10`. To wymusza
 w przeglądarce pobranie świeżej wersji po każdej aktualizacji. Jeśli zmienisz te
-pliki, podbij numer (np. `?v=10`) w `index.html`, a każdy zobaczy nową wersję bez
+pliki, podbij numer (np. `?v=11`) w `index.html`, a każdy zobaczy nową wersję bez
 czyszczenia cache. Podczas testów najpewniej działa okno prywatne (Ctrl+Shift+N).
+
+## Publikacja na własnej domenie (teatr-wizja.pl)
+
+W repozytorium jest plik `CNAME` z domeną `teatr-wizja.pl`. Jeśli chcesz inną domenę
+lub wersję z `www`, zmień domenę w: pliku `CNAME`, w `index.html` (tagi `canonical`,
+`og:url` oraz dane strukturalne), a także w `robots.txt` i `sitemap.xml`.
+
+### DNS (u rejestratora domeny)
+Dla domeny głównej `teatr-wizja.pl` ustaw rekordy A na adresy GitHub Pages:
+`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+(opcjonalnie rekordy AAAA dla IPv6: `2606:50c0:8000::153`, `...8001::153`, `...8002::153`, `...8003::153`).
+Jeśli chcesz też `www.teatr-wizja.pl`, dodaj rekord CNAME: `www` -> `dominikszewczyk224180.github.io`.
+
+### GitHub Pages
+W repozytorium: Settings -> Pages -> Custom domain wpisz `teatr-wizja.pl`, zapisz,
+a po propagacji DNS zaznacz "Enforce HTTPS".
+
+## Google i SEO
+Strona ma komplet: meta tagi, Open Graph, Twitter Card, dane strukturalne
+(Schema.org PerformingGroup), `robots.txt` oraz `sitemap.xml`. Obrazek do
+udostępniania w social media to `assets/og-image.png` (1200x630).
+
+Po uruchomieniu domeny:
+1. Wejdź do Google Search Console, dodaj `teatr-wizja.pl` i potwierdź własność (rekord TXT w DNS).
+2. Dodaj sitemap: `https://teatr-wizja.pl/sitemap.xml`.
+3. Użyj "Sprawdź URL" i "Poproś o zindeksowanie" dla strony głównej, żeby przyspieszyć indeksację.
