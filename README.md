@@ -119,3 +119,29 @@ Pliki `styles.css`, `script.js` i logo są podpięte z końcówką `?v=9`. To wy
 w przeglądarce pobranie świeżej wersji po każdej aktualizacji. Jeśli zmienisz te
 pliki, podbij numer (np. `?v=10`) w `index.html`, a każdy zobaczy nową wersję bez
 czyszczenia cache. Podczas testów najpewniej działa okno prywatne (Ctrl+Shift+N).
+
+## Publikacja na własnej domenie (teatrwizja.pl)
+
+W repozytorium jest plik `CNAME` z domeną `teatrwizja.pl`. Jeśli chcesz inną domenę
+lub wersję z `www`, zmień domenę w: pliku `CNAME`, w `index.html` (tagi `canonical`,
+`og:url` oraz dane strukturalne), a także w `robots.txt` i `sitemap.xml`.
+
+### DNS (u rejestratora domeny)
+Dla domeny głównej `teatrwizja.pl` ustaw rekordy A na adresy GitHub Pages:
+`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+(opcjonalnie rekordy AAAA dla IPv6: `2606:50c0:8000::153`, `...8001::153`, `...8002::153`, `...8003::153`).
+Jeśli chcesz też `www.teatrwizja.pl`, dodaj rekord CNAME: `www` -> `dominikszewczyk224180.github.io`.
+
+### GitHub Pages
+W repozytorium: Settings -> Pages -> Custom domain wpisz `teatrwizja.pl`, zapisz,
+a po propagacji DNS zaznacz "Enforce HTTPS".
+
+## Google i SEO
+Strona ma komplet: meta tagi, Open Graph, Twitter Card, dane strukturalne
+(Schema.org PerformingGroup), `robots.txt` oraz `sitemap.xml`. Obrazek do
+udostępniania w social media to `assets/og-image.png` (1200x630).
+
+Po uruchomieniu domeny:
+1. Wejdź do Google Search Console, dodaj `teatrwizja.pl` i potwierdź własność (rekord TXT w DNS).
+2. Dodaj sitemap: `https://teatrwizja.pl/sitemap.xml`.
+3. Użyj "Sprawdź URL" i "Poproś o zindeksowanie" dla strony głównej, żeby przyspieszyć indeksację.
