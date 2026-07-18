@@ -56,14 +56,38 @@ w sposób bezpieczny i trwały. Dlatego opinie w sekcji *Opinie* są wpisane
 na stałe w `index.html` (można je swobodnie edytować), a żywy strumień postów
 zapewnia wtyczka Page Plugin opisana wyżej.
 
-## Co warto uzupełnić
+## Spektakle i plakaty (sekcja „Nasze spektakle")
 
-- Adres e-mail `kontakt@teatrwizja.pl` pojawia się w sekcji *Kontakt* jako jeden
-  z kanałów (kliknięcie otwiera program pocztowy). Zamień go na prawdziwy adres
-  (wyszukaj w `index.html` frazę `kontakt@teatrwizja.pl`).
-- Telefon: jeśli chcesz pokazać numer kontaktowy, można go dopisać obok e-maila
-  w liście kanałów w sekcji *Kontakt*.
-- Linki do Facebooka i YouTube są już wpięte (profil i kanał Teatru Wizja).
+Każdy spektakl ma własną kartę utrzymaną w stylu swojego plakatu (kolory i akcenty).
+Karty leżą naprzemiennie (plakat raz z lewej, raz z prawej) i są podzielone na
+„Gramy w tym sezonie" (aktualne) oraz „Wcześniej na naszych scenach" (poprzednie).
+
+- podglądy plakatów: `assets/poster-*.jpg`,
+- pliki do pobrania: `assets/plakat-*.pdf` (kliknięcie plakatu otwiera PDF,
+  przycisk „Pobierz plakat" go pobiera),
+- terminy spektakli są wpisane w `index.html` w listach `pcard__meta` (łatwo zmienić).
+
+### Plakat „Małej Ani"
+
+Karta „Mała Ania z Zielonego Wzgórza" ma na razie zastępczy kafelek
+(„Plakat wkrótce"), ponieważ plik PDF tego plakatu nie dotarł. Aby go dodać:
+1. wrzuć podgląd do `assets/poster-ania.jpg` oraz PDF do `assets/plakat-ania.pdf`,
+2. w `index.html` w karcie `pcard--ania` zamień blok `pcard__soon` na `pcard__poster`
+   z linkiem i obrazem (jak w pozostałych kartach),
+3. w `pcard__actions` wstaw przycisk „Pobierz plakat (PDF)" zamiast notatki.
+
+## Logo w sekcji hero
+
+Duże logo po prawej w hero to `assets/logo-white.png` (biały wordmark na
+przezroczystym tle). Gdy pojawi się wersja w lepszej jakości, wystarczy podmienić
+ten jeden plik (najlepiej biały, przezroczyste tło, kwadratowy, np. 800x800 lub większy).
+
+## Kontakt
+
+W sekcji *Kontakt* są dwaj promotorzy kultury (imię, telefon `tel:`, e-mail
+`mailto:`) oraz kanały Facebook i YouTube. Dane zmienisz, wyszukując w `index.html`
+frazy `Marzena Ciecierska` lub `Maciej Rafałowicz`. Zdjęcia założycielek są
+wyświetlane w czerni i bieli (filtr CSS `grayscale` na `.member__photo img`).
 
 ## Filmy
 
@@ -86,6 +110,7 @@ ograniczenia ruchu (`prefers-reduced-motion`) zobaczą wersję bez animacji.
 index.html      - struktura strony
 styles.css      - wygląd (motyw „kosmos", paleta ze zdjęć ze spektakli)
 script.js       - animowane gwiazdy, parallaksa, menu, filmy
-assets/         - logo, zdjęcia założycielek, kadry ze spektakli, favicony
+assets/         - logo, zdjęcia założycielek, kadry ze spektakli, plakaty
+                  (poster-*.jpg podglądy, plakat-*.pdf do pobrania), favicony
 .nojekyll       - informuje GitHub Pages, by nie przetwarzał plików przez Jekyll
 ```
