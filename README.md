@@ -115,7 +115,7 @@ assets/         - logo, zdjęcia założycielek, kadry ze spektakli, plakaty
 
 ## Cache i aktualizacje (ważne)
 
-Pliki `styles.css`, `script.js` i logo są podpięte z końcówką `?v=7`. To wymusza
+Pliki `styles.css`, `script.js` i logo są podpięte z końcówką `?v=9`. To wymusza
 w przeglądarce pobranie świeżej wersji po każdej aktualizacji. Jeśli zmienisz te
-pliki, podbij numer (np. `?v=8`) w `index.html`, a każdy zobaczy nową wersję bez
+pliki, podbij numer (np. `?v=10`) w `index.html`, a każdy zobaczy nową wersję bez
 czyszczenia cache. Podczas testów najpewniej działa okno prywatne (Ctrl+Shift+N).

@@ -293,13 +293,6 @@ button{ font-family:inherit; cursor:pointer; }
   position:relative; z-index:1; width:100%; height:auto; display:block;
   filter:drop-shadow(0 14px 42px rgba(0,0,0,.5));
 }
-.brandmark__spark{
-  position:absolute; z-index:2; font-size:1.1rem; line-height:1;
-  animation:twinkle 3.4s ease-in-out infinite;
-}
-.brandmark__spark--a{ top:6%; right:9%; color:var(--gold); }
-.brandmark__spark--b{ bottom:9%; left:7%; color:var(--aqua); font-size:.85rem; animation-delay:1.5s; }
-@keyframes twinkle{ 0%,100%{ opacity:.3; transform:scale(.85); } 50%{ opacity:1; transform:scale(1.1); } }
 
 .hero__scroll{
   position:absolute; bottom:1.8rem; left:50%; transform:translateX(-50%);
