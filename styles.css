@@ -455,6 +455,8 @@ button{ font-family:inherit; cursor:pointer; }
 .pcard--ania{     --acc:#d8b85a; --acc-soft:rgba(216,184,90,.14); --acc-line:rgba(216,184,90,.42); --pbg1:#16241a; --pbg2:#1a1e12; }
 .pcard--kosmos{   --acc:#9d78ff; --acc-soft:rgba(157,120,255,.15); --acc-line:rgba(157,120,255,.45); --pbg1:#130d31; --pbg2:#190f34; }
 .pcard--kapturek{ --acc:#48b98a; --acc-soft:rgba(72,185,138,.14); --acc-line:rgba(72,185,138,.45); --pbg1:#0a2018; --pbg2:#0f1f22; }
+.pcard--kwiat{    --acc:#ffb547; --acc-soft:rgba(255,181,71,.14); --acc-line:rgba(255,181,71,.45); --pbg1:#0b1a2e; --pbg2:#0b1d17; }
+.pcard--alicja{   --acc:#f57ab6; --acc-soft:rgba(245,122,182,.14); --acc-line:rgba(245,122,182,.45); --pbg1:#2a0f2f; --pbg2:#170b25; }
 
 @media (max-width:900px){
   .pcard, .pcard--flip{ grid-template-columns:1fr; gap:1.5rem; }

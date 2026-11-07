@@ -60,14 +60,14 @@ zapewnia wtyczka Page Plugin opisana wyżej.
 
 Każdy spektakl ma własną kartę utrzymaną w stylu swojego plakatu (kolory i akcenty).
 Karty leżą naprzemiennie (plakat raz z lewej, raz z prawej) i są podzielone na
-„Gramy w tym sezonie" (aktualne) oraz „Wcześniej na naszych scenach" (poprzednie).
+„Gramy w tym sezonie" (aktualne), „Wkrótce na naszych scenach" (zapowiedzi) oraz „Wcześniej na naszych scenach" (poprzednie).
 
 - podglądy plakatów: `assets/poster-*.jpg`,
 - pliki do pobrania: `assets/plakat-*.pdf` (kliknięcie plakatu otwiera PDF,
   przycisk „Pobierz plakat" go pobiera),
 - terminy spektakli są wpisane w `index.html` w listach `pcard__meta` (łatwo zmienić).
 
-Wszystkie cztery spektakle mają już komplet: podgląd plakatu (`poster-*.jpg`)
+Wszystkie spektakle mają komplet: podgląd plakatu (`poster-*.jpg`)
 oraz plik PDF do pobrania (`plakat-*.pdf`).
 
 ## Logo (`assets/logo-hero.png`)
