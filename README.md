@@ -145,3 +145,9 @@ Po uruchomieniu domeny:
 1. Wejdź do Google Search Console, dodaj `teatr-wizja.pl` i potwierdź własność (rekord TXT w DNS).
 2. Dodaj sitemap: `https://teatr-wizja.pl/sitemap.xml`.
 3. Użyj "Sprawdź URL" i "Poproś o zindeksowanie" dla strony głównej, żeby przyspieszyć indeksację.
+
+## Opinie
+
+Sekcja opinii ma trzy równe kolumny (na telefonie opinie są jedna pod drugą).
+Jeśli dojdzie czwarta opinia, zmień w `styles.css` w `.reviews__grid` wartość
+`repeat(3,1fr)` na `repeat(2,1fr)`, żeby siatka była 2x2 bez pustego miejsca.

@@ -575,7 +575,7 @@ button{ font-family:inherit; cursor:pointer; }
 }
 .reviews__label{ color:var(--mist-faint); font-size:.92rem; max-width:18rem; }
 .reviews__grid{
-  display:grid; grid-template-columns:repeat(2,1fr); gap:1.3rem;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.3rem;
 }
 .quote{
   position:relative;
@@ -594,7 +594,6 @@ button{ font-family:inherit; cursor:pointer; }
 .quote blockquote{ font-size:1.05rem; color:var(--mist); margin:.4rem 0 1.3rem; }
 .quote__author{ display:block; font-family:var(--ff-display); font-weight:600; font-size:1.1rem; }
 .quote__src{ display:block; font-family:var(--ff-util); font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--mist-faint); margin-top:.2rem; }
-.quote--mini blockquote{ font-family:var(--ff-display); font-style:italic; font-size:1.15rem; }
 
 /* =====================================================================
    KONTAKT
