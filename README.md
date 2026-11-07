@@ -59,8 +59,8 @@ zapewnia wtyczka Page Plugin opisana wyżej.
 ## Spektakle i plakaty (sekcja „Nasze spektakle")
 
 Każdy spektakl ma własną kartę utrzymaną w stylu swojego plakatu (kolory i akcenty).
-Karty leżą naprzemiennie (plakat raz z lewej, raz z prawej) i są podzielone na
-„Gramy w tym sezonie" (aktualne), „Wkrótce na naszych scenach" (zapowiedzi) oraz „Wcześniej na naszych scenach" (poprzednie).
+Karty leżą naprzemiennie (plakat raz z lewej, raz z prawej): na górze zapowiedzi,
+potem aktualne, na końcu wcześniejsze spektakle. Termin każdego jest na jego karcie.
 
 - podglądy plakatów: `assets/poster-*.jpg`,
 - pliki do pobrania: `assets/plakat-*.pdf` (kliknięcie plakatu otwiera PDF,

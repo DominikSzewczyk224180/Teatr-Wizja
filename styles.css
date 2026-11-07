@@ -368,16 +368,6 @@ button{ font-family:inherit; cursor:pointer; }
    SPEKTAKLE
    ===================================================================== */
 .shows{ padding-block:var(--pad-section); }
-/* ---- Etykiety grup spektakli ---- */
-.shows__grouplabel{
-  font-family:var(--ff-util); font-size:.8rem; font-weight:600;
-  letter-spacing:.16em; text-transform:uppercase; color:var(--mist-faint);
-  display:flex; align-items:center; gap:.6rem;
-  margin:3.2rem 0 1.5rem;
-}
-.shows__grouplabel:first-of-type{ margin-top:1rem; }
-.shows__grouplabel-star{ color:var(--gold); }
-
 /* ---- Karty spektakli (pcard) ---- */
 .pcard{
   --acc:#ffce5c; --acc-soft:rgba(255,206,92,.14); --acc-line:rgba(255,206,92,.42);
